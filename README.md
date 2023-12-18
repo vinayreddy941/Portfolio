@@ -1,2 +1,0 @@
-# vinayredddy
-Protfolio
