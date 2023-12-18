@@ -1,3 +1,0 @@
-# vinayredddy
-Protfolio
-dfdgfhdf
