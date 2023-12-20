@@ -12,6 +12,13 @@ const sendEmail = (e) => {
             setTimeout(() => {
                 contactMessage.textContent = ""; 
             }, 5000);
+
+
+            contactForm.reset()
+
+        }, () => {
+            contactMessage.textContent = "Message not sent (service error) ❌";
+
         })
 
 };
