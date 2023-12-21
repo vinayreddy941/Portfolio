@@ -32,7 +32,6 @@ const bgHeader = () => {
 window.addEventListener('scroll', bgHeader)
 /*=============== DARK LIGHT THEME ===============*/ 
 
-
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'

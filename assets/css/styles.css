@@ -322,7 +322,7 @@ background: linear-gradient(180deg,
   background-color: var(--body-color);
 }
 
-.header-pages :is(.nav__logo, .nav__toggle){
+.header-pages :is(.nav__logo, .nav__toggle, .change-theme){
   color : var(--title-color);
 }
 
