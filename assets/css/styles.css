@@ -146,6 +146,25 @@ body.dark-theme{
 	the website, in dark theme
 ==========*/
 
+.dark-theme .bg-header{
+  box-shadow: 0 12px 24px var(--shadow-color);
+}
+
+.dark-theme .services__modal{
+  background-color: hsla(var(--hue), 90%, 8%, .2);
+}
+
+.dark-theme::-webkit-scrollbar{
+  background-color: hsl(var(--hue), 16%, 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb{
+  background-color: hsl(var(--hue), 16%, 25%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb{
+  background-color: hsl(var(--hue), 16%, 35%);
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -294,7 +313,7 @@ background: linear-gradient(180deg,
   box-shadow: 0 2px 16px var(--shadow-color);
 
 }
-.bg-header :is(.nav__logo, .nav__toggle){
+.bg-header :is(.nav__logo, .nav__toggle, .change-theme){
   color: var(--title-color);
 }
 
