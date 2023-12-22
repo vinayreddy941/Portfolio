@@ -186,7 +186,7 @@ body.dark-theme{
   margin-bottom: 2rem;
 }
 
-.perfil {
+.perfil{
   width: 250px;
   height: 250px;
   background-color: var(--body-color);
@@ -208,8 +208,9 @@ display : flex;
 justify-content: center;
 align-items: flex-end;
 background: linear-gradient(180deg,
-            hsl(var(--hue),90%, 80%)
-            hsl(var(--hue), 90% 30%));
+            hsl(var(--hue), 90%, 80%),
+            hsl(var(--hue), 90%, 30%));
+
 }
 
 .perfil__img {
@@ -820,7 +821,7 @@ background: linear-gradient(180deg,
 
 /* For large devices */
 
-@media screen and (min-width : 1150px) {
+@media screen and (min-width : 800px) {
   .container{
     margin-inline : auto;
   }
@@ -836,7 +837,135 @@ background: linear-gradient(180deg,
     height: calc(var(--header-height) + 2rem);
     column-gap: 3rem;
   }
+
+  .nav__toggle,
+  .nav__close{
+    display: none;
+  }
+
+  .nav__menu{
+    margin-left : auto;
+  }
+
+  .nav__list{
+    flex-direction: row;
+    align-items: center;
+    column-gap: 3rem;
+  }
+
+  .change-theme{
+    color: var(--title-color);
+  }
+  
+  .perfil{
+    width: 360px;
+    height: 360px;
+    border-width: 10px;
+  }
+  .perfil__content{
+    width: 260px;
+    height: 260px;
+    border-width: 10px;
+  }
+  .perfil__img{
+    width: 300px;
+  }
+
+  .home__rectangle{
+    width: 30vw;
+    height: 100%;
+  }
+
+  .home__container{
+    position: relative;
+    grid-template-columns: 500px 400px;
+    align-items : center;
+    column-gap : 4rem;
+    padding-block: 3.5rem 8rem;
+  }
+
+  .home__content{
+    row-gap : 4rem;
+  }
+
+  .home__data{
+    row-gap : 1rem;
+    text-align: initial;
+  
+  }
+
+  .home__social{
+    flex-direction: column;
+    row-gap: 1.5rem;
+    position: absolute;
+    top: -4rem;
+    bottom : 0;
+    right: 0;
+  }
+
+  .home__social-link{
+    color: var(--first-color);
+
+  }
+
+  .home__profession{
+    margin-left: 5px;
+  }
+
+  .home__button{
+    justify-self: flex-start;
+    margin-left: 7px;
+  }
+
+  /*
+  .services__container{
+    grid-template-columns: repeat(3, 345px);
+
+  }
+
+  .services__card{
+    padding-block: 4.5rem;
+  }
+
+  .services__modal-content{
+    max-height: 480px;
+    padding : 5.5rem 2rem;
+  
+  }
+
+  .services__modal-close{
+    font-size: 2rem;
+  }
+  */
+
+  .work__container{
+    grid-template-columns: repeat(3, 350px);
+    row-gap: 4rem;
+  }
+
+  .work__container{
+    grid-template-columns: repeat(3, 350px);
+    row-gap: 4rem;
+  }
+
+  .contact__container{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    align-items: center;
+    column-gap: 25rem;
+    padding-block: 1rem 5rem;
+  }
+
+  .contact__container  .section__title{
+    text-align: initial;
+    margin : 0;
+  }
+
+  .contact__button{
+    border-radius: 0;
+  }
 }
+
 
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
