@@ -83,26 +83,31 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moo
 
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
-    let isScrolling;
     const workImgs = document.querySelectorAll('.work__img');
   
-    window.addEventListener('scroll', function() {
-      // Clear the existing timeout to ensure only one timeout runs at a time
-      clearTimeout(isScrolling);
+    // Options for the IntersectionObserver
+    const observerOptions = {
+      root: null,  // use the viewport as the root
+      rootMargin: '0px',  // no margin around the root
+      threshold: 0.5  // trigger when half of the image is visible
+    };
   
-      // Set a timeout to detect when scrolling stops
-      isScrolling = setTimeout(function() {
-        for (let img of workImgs) {
-          img.style.transform = 'scale(1)';
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // When the image is in the viewport, scale it up
+          entry.target.style.transform = 'scale(1.1)';
+        } else {
+          // When the image is not in the viewport, return it to its original size
+          entry.target.style.transform = 'scale(1)';
         }
-      }, 150); // Adjust the timeout duration as needed
+      });
+    }, observerOptions);
   
-      // Scale up all images
-      for (let img of workImgs) {
-        img.style.transform = 'scale(1.1)';
-      }
+    // Start observing each .work__img element
+    workImgs.forEach(img => {
+      observer.observe(img);
     });
   });
   
