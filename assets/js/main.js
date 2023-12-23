@@ -76,38 +76,3 @@ themeButton.addEventListener('click', () => {
 
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line';
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const workImgs = document.querySelectorAll('.work__img');
-  
-    // Options for the IntersectionObserver
-    const observerOptions = {
-      root: null,  // use the viewport as the root
-      rootMargin: '0px',  // no margin around the root
-      threshold: 0.5  // trigger when half of the image is visible
-    };
-  
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // When the image is in the viewport, scale it up
-          entry.target.style.transform = 'scale(1.1)';
-        } else {
-          // When the image is not in the viewport, return it to its original size
-          entry.target.style.transform = 'scale(1)';
-        }
-      });
-    }, observerOptions);
-  
-    // Start observing each .work__img element
-    workImgs.forEach(img => {
-      observer.observe(img);
-    });
-  });
-  
