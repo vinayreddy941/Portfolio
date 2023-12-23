@@ -1028,12 +1028,25 @@ background: linear-gradient(180deg,
   .about__skills-img{
     width: 40px ;
   }
+  .nav__actions {
+    position: relative; 
+}
+
+.change-theme {
+    position: relative;
+    left: -30px;
+}
+
+
 }
 
 @media screen and (min-width : 1500px){
   .home__rectangle{
     width: 33vw;
   }
+
+  
+
 }
 
 
