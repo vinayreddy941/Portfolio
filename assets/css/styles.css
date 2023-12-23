@@ -745,7 +745,16 @@ background: linear-gradient(180deg,
   .about__skills-content{
     grid-template-columns: repeat(4, max-content);
   }
+  
 }
+
+@media (max-width: 768px) {
+  .work__img {
+      filter: none;
+      transition: filter .5s, transform .5s;
+  }
+}
+
 
 /* For medium devices */
 
@@ -754,6 +763,7 @@ background: linear-gradient(180deg,
     grid-template-columns : 320px;
     justify-content: center;
   }
+  
 
   .services__modal-content{
     width : 400px;
@@ -969,3 +979,17 @@ background: linear-gradient(180deg,
 
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+
+
+.footer__social-link {
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer__social-link:hover {
+  transform: scale(1.5);
+}
+
+/* Additional class for scaling */
+.footer__social-link--scaled {
+  transform: scale(1.5);
+}

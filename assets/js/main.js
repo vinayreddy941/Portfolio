@@ -76,3 +76,39 @@ themeButton.addEventListener('click', () => {
 
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line';
+
+
+
+// Check if the device is a mobile device based on screen width.
+function isMobileDevice() {
+    return window.innerWidth <= 768; // Assuming 768px is your mobile breakpoint.
+  }
+  
+  // Function to check if an element is in the viewport.
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.bottom >= 0 &&
+      rect.right >= 0 &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  
+  // Function to scale a social link.
+  function scaleSocialLink(link) {
+    link.classList.add('footer__social-link--scaled');
+  }
+  
+  // Add an event listener to check for scroll.
+  window.addEventListener('scroll', function() {
+    if (isMobileDevice()) {
+      const socialLinks = document.querySelectorAll('.footer__social-link');
+      socialLinks.forEach(link => {
+        if (isElementInViewport(link)) {
+          scaleSocialLink(link);
+        }
+      });
+    }
+  });
+  
