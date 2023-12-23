@@ -79,36 +79,30 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moo
 
 
 
-// Check if the device is a mobile device based on screen width.
-function isMobileDevice() {
-    return window.innerWidth <= 768; // Assuming 768px is your mobile breakpoint.
-  }
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let isScrolling;
+    const workImgs = document.querySelectorAll('.work__img');
   
-  // Function to check if an element is in the viewport.
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.bottom >= 0 &&
-      rect.right >= 0 &&
-      rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.left <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
+    window.addEventListener('scroll', function() {
+      // Clear the existing timeout to ensure only one timeout runs at a time
+      clearTimeout(isScrolling);
   
-  // Function to scale a social link.
-  function scaleSocialLink(link) {
-    link.classList.add('footer__social-link--scaled');
-  }
-  
-  // Add an event listener to check for scroll.
-  window.addEventListener('scroll', function() {
-    if (isMobileDevice()) {
-      const socialLinks = document.querySelectorAll('.footer__social-link');
-      socialLinks.forEach(link => {
-        if (isElementInViewport(link)) {
-          scaleSocialLink(link);
+      // Set a timeout to detect when scrolling stops
+      isScrolling = setTimeout(function() {
+        for (let img of workImgs) {
+          img.style.transform = 'scale(1)';
         }
-      });
-    }
+      }, 150); // Adjust the timeout duration as needed
+  
+      // Scale up all images
+      for (let img of workImgs) {
+        img.style.transform = 'scale(1.1)';
+      }
+    });
   });
   

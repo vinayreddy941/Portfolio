@@ -490,16 +490,16 @@ background: linear-gradient(180deg,
   overflow: hidden;
   margin-bottom: 1rem;
 }
-
+/* Default styles for both desktop and mobile screens */
 .work__img{
-  filter:grayscale(1);
+  filter: grayscale(1);
   transition: filter .5s, transform .5s;
 }
 
 .work__icon{
   position: absolute;
-  top:1.25rem;
-  right:1.25rem;
+  top: 1.25rem;
+  right: 1.25rem;
   font-size: 2rem;
   color: var(--first-color);
   transition: transform .4s;
@@ -507,12 +507,32 @@ background: linear-gradient(180deg,
 
 .work__link:hover .work__img{
   transform: scale(1.1);
-  filter : none;
 }
 
 .work__link:hover .work__icon{
-  transform: translate(.5rem, -.5rem) rotate(-30deg)
+  transform: translate(.5rem, -.5rem) rotate(-30deg);
 }
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {  /* Adjust this breakpoint as needed */
+  .work__img{
+    filter: none; /* Removing grayscale effect on mobile */
+  }
+
+  .work__icon{
+    top: 0.75rem; /* Adjusting top position for mobile */
+    right: 0.75rem; /* Adjusting right position for mobile */
+  }
+
+  .work__link:hover .work__img{
+    transform: scale(1); /* Removing the scale effect on mobile */
+  }
+
+  .work__link:hover .work__icon{
+    transform: translate(0, 0) rotate(0deg); /* Resetting transform on mobile hover */
+  }
+}
+
 
 .work__title{
   font-size: var(--h2-font-size);
@@ -980,16 +1000,3 @@ background: linear-gradient(180deg,
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
 
-
-.footer__social-link {
-  transition: transform 0.3s ease-in-out;
-}
-
-.footer__social-link:hover {
-  transform: scale(1.5);
-}
-
-/* Additional class for scaling */
-.footer__social-link--scaled {
-  transform: scale(1.5);
-}
