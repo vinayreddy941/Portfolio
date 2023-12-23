@@ -509,6 +509,7 @@ background: linear-gradient(180deg,
   transform: scale(1.1);
 }
 
+
 .work__link:hover .work__icon{
   transform: translate(.5rem, -.5rem) rotate(-30deg);
 }
