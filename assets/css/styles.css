@@ -542,6 +542,21 @@ background: linear-gradient(180deg,
   background-color: var(--text-color-light);
 }
 
+.services__modal-title {
+  font-size: var(--h2-font-size) ;
+  margin-bottom: 2.5rem;
+}
+
+.services__modal-list{
+  margin-left: 1rem;
+
+}
+
+.services__modal-item{
+  text-align: initial;
+  list-style: circle;
+}
+
 
 
 
