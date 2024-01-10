@@ -5,19 +5,7 @@
 :root {
   --header-height: 3.5rem;
 
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  /* 
-      Change favorite color
-      Default: hsl(255, 90%, 60%)
-      Orange: hsl(14, 90%, 60%) - Blue: hsl(210, 90%, 50%)
-      Pink: hsl(356, 100%, 65%) - Green: hsl(162, 90%, 40%)
 
-      For more colors visit: https://colors.dopely.top/color-pedia
-      -> Choose any color 
-      -> Click on tab (Color Conversion)
-      -> Copy the color mode (HSL)
-  */
   --hue: 255;
   --first-color: hsl(var(--hue), 90%, 60%);
   --first-color-alt: hsl(var(--hue), 82%, 56%);
@@ -141,10 +129,7 @@ body.dark-theme{
 }
 
 
-/*========== 
-	Color changes in some parts of 
-	the website, in dark theme
-==========*/
+
 
 .dark-theme .bg-header{
   box-shadow: 0 12px 24px var(--shadow-color);
@@ -472,11 +457,14 @@ background: linear-gradient(180deg,
 
 
 
-
-/*=============== SERVICES ===============*/
-
-
 /* Active modal */
+.active-modal{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
 
 
 /*=============== WORK ===============*/
@@ -522,12 +510,6 @@ background: linear-gradient(180deg,
 .work__page{
   padding-bottom : 3rem;
 }
-/*=============== TESTIMONIAL ===============*/
-
-
-/* Swiper class */
-
-
 
 /*=============== CONTACT ===============*/
 
@@ -759,6 +741,8 @@ background: linear-gradient(180deg,
 /* For medium devices */
 
 @media screen and (min-width : 576px){
+  
+  /*
   .services__container{
     grid-template-columns : 320px;
     justify-content: center;
@@ -768,6 +752,7 @@ background: linear-gradient(180deg,
   .services__modal-content{
     width : 400px;
   }
+*/
 
   .work__container{
     grid-template-columns: 350px;
